@@ -19,8 +19,13 @@ var saveUser = function (userData) {
 };
 
 var getUser = function () {
+  /**
+   * query with lean()
+   * return plain js object
+   */
   return new Promise(function (fulfill, reject) {
     UserSchema.find()
+      .lean()
       .then(function (users) {
         fulfill({data: users[users.length - 1]});
       })
