@@ -1,0 +1,19 @@
+{
+  "name": "first-react-app-back-end",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.12.3",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server/app",
+    "client": "node startClient",
+    "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}

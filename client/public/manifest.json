@@ -1,0 +1,10 @@
+{
+  "shortName": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+  ],
+  "startUrl": "./index.html",
+  "display": "standalone",
+  "themeColor": "#000000",
+  "backgroundColor": "#ffffff"
+}
