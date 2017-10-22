@@ -5,6 +5,7 @@
 var mongoose = require('mongoose');
 
 var mongooseConnection = function () {
+
   mongoose.Promise = global.Promise;
 
   // block that line, and run the app
@@ -12,14 +13,15 @@ var mongooseConnection = function () {
   // You shouldn't be getting this warning unless you use promises...
   // https://github.com/Automattic/mongoose/issues/4291
 
-  var connection =  mongoose.connection.openUri('mongodb://localhost/react_app_test_db');
-
-  var database = mongoose.connection; // database will have the opened connection
-
-  database.on('error', console.error);
-  database.once('open', function () {
-    console.log('Connected to react_app_test_db');
-  });
+  mongoose.connect('mongodb://localhost/react_app_test_db', {
+    useMongoClient: true
+  })
+    .then(function (db) {
+      console.log('Connected to react_app_test_db');
+    })
+    .catch(function (err) {
+      console.error(err.message);
+    });
 };
 
 module.exports.mongooseConnection = mongooseConnection;
