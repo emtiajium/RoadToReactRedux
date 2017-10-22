@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import moment from 'moment';
 import {getUser, clearUserDataFetched} from '../actions/userInfo.action';
 
 class UserInfo extends Component {
@@ -35,7 +36,14 @@ class UserInfo extends Component {
           <div className="form-group">
             <label className="col-sm-2 control-label">First Name</label>
             <div className="col-sm-4">
-              <input disabled={true} type="first-name" className="form-control" id="first-name" value={user.firstName} placeholder="" />
+              <input disabled={true} type="text" className="form-control" id="first-name" value={user.firstName} placeholder="" />
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label className="col-sm-2 control-label">Created At</label>
+            <div className="col-sm-4">
+              <input disabled={true} type="text" className="form-control" id="created-at" value={moment(user.createdAt).utc().format('MMMM DD, YYYY')} placeholder="" />
             </div>
           </div>
         </div>
