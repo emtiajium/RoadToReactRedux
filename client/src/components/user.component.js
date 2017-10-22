@@ -91,6 +91,7 @@ class User extends Component {
 
 /**
  * transform the current redux store state into the props
+ * `store.getState().X` can be used as `this.props.X`
  * @param state
  * @returns props
  */
@@ -105,6 +106,7 @@ const mapStateToProps = function (state) {
 
 /**
  * dispatch action creator to props
+ * `store.dispatch(aAction)` > `this.props(aAction)`
  * if declared as function, pass `dispatch` as first argument
  */
 
