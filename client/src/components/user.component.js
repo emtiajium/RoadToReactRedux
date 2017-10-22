@@ -72,7 +72,7 @@ class User extends Component {
             <div className="form-group">
               <label className="col-sm-2 control-label">First Name</label>
               <div className="col-sm-4">
-                <input type="first-name" className="form-control" id="first-name" defaultValue={this.props.firstName} onChange={this.setFirstName} placeholder="" />
+                <input type="text" className="form-control" id="first-name" defaultValue={this.props.firstName} onChange={this.setFirstName} placeholder="" />
               </div>
             </div>
 
