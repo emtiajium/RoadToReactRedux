@@ -6,13 +6,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 ObjectId = Schema.ObjectId;
 
-var SchemaOptions = {
-  toObject: {
-    virtuals: true
-  },
-  toJSON: {
-    virtuals: true
-  }
+var schemaOptions = {
+  timestamps: true // mongoose assigns createdAt, updatedAt fields
 };
 
 var UserSchema = new Schema({
@@ -22,7 +17,7 @@ var UserSchema = new Schema({
   email: {
     type: String
   }
-});
+}, schemaOptions);
 
 var User = mongoose.model('user', UserSchema);
 
