@@ -23,7 +23,6 @@ class AllRoutes extends Component {
             </ul>
           </div>
           <div className="col-sm-9">
-            <Route path='/' component={UserInfoComponent} />
             <Route path='/user' component={UserComponent} />
             <Route path='/user_info' component={UserInfoComponent} />
           </div>
