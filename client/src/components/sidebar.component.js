@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 class SidebarContent extends Component {
   render() {
@@ -7,18 +7,19 @@ class SidebarContent extends Component {
      * here importing `Router` is necessary
      * otherwise `NavLink` won't work
      * error message: You should not use <Route> or withRouter() outside a <Router>
+     * Note: as this component's used in main.component
+     * and there is Router
+     * so here it's useless
      */
     let element = (
-      <Router>
-        <ul className="nav">
-          <li>
-            <NavLink to='/user'>User</NavLink>
-          </li>
-          <li>
-            <NavLink to='/user_info'>User Info</NavLink>
-          </li>
-        </ul>
-      </Router>
+      <ul className="nav">
+        <li>
+          <NavLink to='/user'>User</NavLink>
+        </li>
+        <li>
+          <NavLink to='/user_info'>User Info</NavLink>
+        </li>
+      </ul>
     );
     return element;
   }
