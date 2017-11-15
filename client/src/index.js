@@ -2,23 +2,17 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import './style/importStyle';
-import SidebarContent from './components/sidebar.component';
-import Routes from './routes';
+import MainComponent from './components/main.component';
 import configureStore from './store/configureStore';
 import registerServiceWorker from './registerServiceWorker';
 
 let store = configureStore();
 
 render(
-  <SidebarContent/>,
-  document.getElementById('sidebar-content')
-);
-
-render(
   <Provider store={store}>
-    <Routes/>
+    <MainComponent/>
   </Provider>,
-  document.getElementById('page-content')
+  document.getElementById('root')
 );
 
 registerServiceWorker();
